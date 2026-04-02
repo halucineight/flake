@@ -31,6 +31,27 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }: { };
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , ags
+    , dotfiles
+    , ags-shell
+    , ...
+    }:
+    {
+      nixosConfigurations = {
+        desktop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit ags dotfiles ags-shell; };
+          modules = [
+            ./configuration.nix
+            ./machines/desktop
+            home-manager.nixosModules.home-manager
+          ];
+        };
+      };
+    };
 
 }
