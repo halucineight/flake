@@ -3,8 +3,12 @@
 {
   imports = [
     ./modules/bootloader/default.nix
+    ./modules/users/default.nix
+    ./modules/networking/default.nix
+    ./modules/general/default.nix
+    ./packages/default.nix
     ./nix.nix
-  ]; 
+  ] ++ lib.optional (builtins.pathExists ./local.nix) ./local.nix;
 
   time.timeZone = lib.mkDefault "Etc/UTC";
   
