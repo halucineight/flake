@@ -33,27 +33,4 @@
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     kde-gtk-config
   ];
-
-  # Allow networkmanager group members to manage wifi networks
-  # security.polkit.enable = true;
-  # security.polkit.extraConfig = ''
-  #   polkit.addRule(function(action, subject) {
-  #     var allowed_actions = [
-  #       "org.freedesktop.NetworkManager.enable-disable-network",
-  #       "org.freedesktop.NetworkManager.enable-disable-wifi",
-  #       "org.freedesktop.NetworkManager.enable-disable-wwan",
-  #       "org.freedesktop.NetworkManager.network-control",
-  #       "org.freedesktop.NetworkManager.settings.modify.own",
-  #       "org.freedesktop.NetworkManager.settings.modify.system",
-  #       "org.freedesktop.NetworkManager.wifi.scan",
-  #       "org.freedesktop.NetworkManager.wifi.share.open",
-  #       "org.freedesktop.NetworkManager.wifi.share.protected"
-  #     ];
-  #     if (allowed_actions.indexOf(action.id) >= 0) {
-  #       if (subject.isInGroup("networkmanager")) {
-  #         return polkit.Result.YES;
-  #       }
-  #     }
-  #   });
-  # '';
 }
