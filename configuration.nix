@@ -6,6 +6,7 @@
     ./modules/users/default.nix
     ./modules/networking/default.nix
     ./modules/general/default.nix
+    ./modules/ssh/default.nix
     ./packages/default.nix
     ./nix.nix
   ] ++ lib.optional (builtins.pathExists ./local.nix) ./local.nix;

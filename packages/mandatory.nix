@@ -1,13 +1,16 @@
 { pkgs }:
 
-with pkgs; [
+#These packages don't have Nix-style services
+
+with pkgs;
+[
   vim
   neovim
   yazi
   gcc
   gnumake42
   libgcc
-  nixd 
+  nixd
   nixfmt
   zsh
   kitty
@@ -17,6 +20,7 @@ with pkgs; [
   unzip
   ripgrep
   git
+  git-filter-repo
   waybar
   hyprpaper
   hyprlock

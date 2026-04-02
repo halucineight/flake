@@ -11,8 +11,8 @@
 
   programs.hyprland = {
     enable = true;
-    withUWSM = true; # recommended for most users
-    xwayland.enable = true; # Xwayland can be disabled.
+    withUWSM = true;
+    xwayland.enable = true;
   };
 
   services.pipewire = {
@@ -33,4 +33,12 @@
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     kde-gtk-config
   ];
+
+  services.gnome.gnome-keyring.enable = true;
+  services.gnome.gcr-ssh-agent.enable = false;
+  security.pam.services.sddm.enableGnomeKeyring = true;
+
+  programs.ssh.startAgent = true;
+  programs.ssh.agentTimeout = null;
+
 }
