@@ -18,7 +18,7 @@
   ];
 
   # DeepCool hardware control (optional)
-  services.hardware.deepcool-digital-linux = lib.mkIf config.packages.enableHardwareMonitoring {
+  services.hardware.deepcool-digital-linux =  {
     enable = true;
     extraArgs = [
       "--mode"
