@@ -4,6 +4,8 @@
 , ...
 }:
 
+# TODO : Needs modularisation
+
 {
   programs.firefox.enable = true;
   programs.kdeconnect.enable = true;
