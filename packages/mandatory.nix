@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, quickshellFlake, ...}:
 
 #These packages don't have Nix-style services
 
@@ -43,4 +43,5 @@ with pkgs;
   mpv
   yt-dlp
   fastfetch
+  quickshellFlake.packages.${pkgs.system}.default
 ]
