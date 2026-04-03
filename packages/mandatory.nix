@@ -42,4 +42,5 @@ with pkgs;
   exiftool
   mpv
   yt-dlp
+  fastfetch
 ]
