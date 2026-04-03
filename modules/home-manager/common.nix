@@ -24,7 +24,7 @@
     then "${dotfiles}/hyprland/.config/hypr/monitors-laptop.conf"
     else "${dotfiles}/hyprland/.config/hypr/monitors-desktop.conf";
 
-  #Direct symlink so package.json can be edited independently
+  #Direct symlink so package-lock.json can be edited independently
   home.file.".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/dotfiles/nvim/.config/nvim";
