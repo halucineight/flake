@@ -7,8 +7,9 @@
     ./modules/networking/default.nix
     ./modules/general/default.nix
     ./modules/flatpak/default.nix
-    ./modules/mullvad/default.nix
     ./packages/default.nix
+    ./modules/mullvad/default.nix
+    ./modules/fonts/default.nix
     ./nix.nix
   ] ++ lib.optional (builtins.pathExists ./local.nix) ./local.nix;
 
