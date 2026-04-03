@@ -44,4 +44,5 @@ with pkgs;
   yt-dlp
   fastfetch
   quickshellFlake.packages.${pkgs.system}.default
+  kdePackages.qtdeclarative
 ]
