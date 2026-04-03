@@ -16,7 +16,10 @@
     };
 
     users.${config.users.primaryUser} = {
-      imports = [ ./common.nix ];
+      imports = [
+        ./common.nix
+        ./gtk.nix
+      ];
 
       # User-specific settings
       home.username = config.users.primaryUser;
@@ -43,10 +46,4 @@
     };
   };
 
-  services.gnome.gnome-keyring.enable = true;
-  services.gnome.gcr-ssh-agent.enable = false;  
-  security.pam.services.sddm.enableGnomeKeyring = true;
-
-  programs.ssh.startAgent = true;
-  programs.ssh.agentTimeout = null;
 }
