@@ -38,6 +38,8 @@
       gtk-xft-dpi = 98304;
     };
 
+    gtk4.theme = null; 
+
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = true;
       gtk-cursor-blink = true;
