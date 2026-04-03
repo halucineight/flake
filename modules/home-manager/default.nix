@@ -38,7 +38,10 @@
     };
 
     users.playground = lib.mkIf config.users.createPlaygroundUser {
-      imports = [ ./common.nix ];
+      imports = [ 
+        ./common.nix
+        ./gtk.nix
+      ];
 
       home.username = "playground";
       home.homeDirectory = "/home/playground";
