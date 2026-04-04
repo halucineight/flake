@@ -1,78 +1,35 @@
 {
   "nodes": {
-    "ags": {
-      "inputs": {
-        "astal": [
-          "astal"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1764289441,
-        "narHash": "sha256-ak+lgFiYE5PHByN1/BRkO5JP498hno6Ix24C1Qf/vec=",
-        "owner": "aylur",
-        "repo": "ags",
-        "rev": "e169694390548dfd38ff40f1ef2163d6c3ffe3ea",
-        "type": "github"
-      },
-      "original": {
-        "owner": "aylur",
-        "repo": "ags",
-        "type": "github"
-      }
-    },
-    "ags-shell": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1769994249,
-        "narHash": "sha256-eERFNqiD9IBTd5XE+kIL2MFVP1nZArLsEsRdADcSVbM=",
-        "ref": "refs/heads/main",
-        "rev": "ed261ddc09cea036ed60b9b335fd61cc8f423682",
-        "revCount": 34,
-        "type": "git",
-        "url": "ssh://git@github.com/halucineight/ags-shell.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/halucineight/ags-shell.git"
-      }
-    },
-    "astal": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1773914523,
-        "narHash": "sha256-GOL+bR30FPImAzy4NNsTMY1gpoINMsLTXR0WJBRSq30=",
-        "owner": "aylur",
-        "repo": "astal",
-        "rev": "41b50290c6a1cdce7b482897c22fe49286912b9a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "aylur",
-        "repo": "astal",
-        "type": "github"
-      }
-    },
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1775309782,
-        "narHash": "sha256-IcZozZ3tSAzZJ84W3j/ymbFhMTgCj3zazuF5Z+FeEEM=",
+        "lastModified": 1775315932,
+        "narHash": "sha256-hPGlOT9vHrkF+Mq4kyhOjfVptLLvHE+/VrXytU3nKp8=",
         "ref": "refs/heads/main",
-        "rev": "6522862c42c9fe4a5c65e51572ac3621f816da6b",
-        "revCount": 343,
+        "rev": "1cd3e2e681ae324270ad38f2bd67689c4b3cf89f",
+        "revCount": 344,
         "type": "git",
         "url": "ssh://git@github.com/halucineight/dotfiles.git"
       },
       "original": {
         "type": "git",
         "url": "ssh://git@github.com/halucineight/dotfiles.git"
+      }
+    },
+    "gruvshell": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775316017,
+        "narHash": "sha256-A3jocDa2YREp8oxjQZQvyEjqAAmv/UYirG9gSyYsalQ=",
+        "ref": "refs/heads/master",
+        "rev": "163cfb09b9dc6c79c9be8b6f43c8b6fc766ee75d",
+        "revCount": 33,
+        "type": "git",
+        "url": "ssh://git@github.com/halucineight/gruvshell.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/halucineight/gruvshell.git"
       }
     },
     "home-manager": {
@@ -133,10 +90,8 @@
     },
     "root": {
       "inputs": {
-        "ags": "ags",
-        "ags-shell": "ags-shell",
-        "astal": "astal",
         "dotfiles": "dotfiles",
+        "gruvshell": "gruvshell",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "quickshell": "quickshell"

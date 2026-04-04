@@ -18,24 +18,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    astal = {
-      url = "github:aylur/astal";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ags = {
-      url = "github:aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.astal.follows = "astal";
-    };
-
     dotfiles = {
       url = "git+ssh://git@github.com/halucineight/dotfiles.git";
       flake = false;
     };
 
-    ags-shell = {
-      url = "git+ssh://git@github.com/halucineight/ags-shell.git";
+    gruvshell = {
+      url = "git+ssh://git@github.com/halucineight/gruvshell.git";
       flake = false;
     };
   };
@@ -45,10 +34,9 @@
       self,
       nixpkgs,
       home-manager,
-      ags,
       quickshell,
       dotfiles,
-      ags-shell,
+      gruvshell,
       ...
     }:
     {
@@ -57,9 +45,8 @@
           system = "x86_64-linux";
           specialArgs = {
             inherit
-              ags
               dotfiles
-              ags-shell
+              gruvshell
               ;
             quickshellFlake = quickshell;
           };
@@ -73,9 +60,8 @@
           system = "x86_64-linux";
           specialArgs = {
             inherit
-              ags
               dotfiles
-              ags-shell
+              gruvshell
               ;
             quickshellFlake = quickshell;
           };

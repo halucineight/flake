@@ -1,8 +1,7 @@
 { config
 , lib
-, ags
 , dotfiles
-, ags-shell
+, gruvshell
 , ...
 }:
 
@@ -12,7 +11,7 @@
     useUserPackages = true;
     extraSpecialArgs = {
       osConfig = config;
-      inherit ags dotfiles ags-shell;
+      inherit dotfiles gruvshell;
     };
 
     users.${config.users.primaryUser} = {
