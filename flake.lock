@@ -62,11 +62,11 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1775223619,
-        "narHash": "sha256-ESMqcTmU9orcbWoSx43bgRm8atTbqAFylyuECXI1vgk=",
+        "lastModified": 1775309782,
+        "narHash": "sha256-IcZozZ3tSAzZJ84W3j/ymbFhMTgCj3zazuF5Z+FeEEM=",
         "ref": "refs/heads/main",
-        "rev": "bca6e9a00114c7cc77e1932f8b23ff361c5f25d0",
-        "revCount": 312,
+        "rev": "6522862c42c9fe4a5c65e51572ac3621f816da6b",
+        "revCount": 343,
         "type": "git",
         "url": "ssh://git@github.com/halucineight/dotfiles.git"
       },
@@ -118,11 +118,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775201427,
-        "narHash": "sha256-yTjyHtMpJiB9fAcPAtvROn5tFAwSqCTnfG7w+LtmpMM=",
+        "lastModified": 1775293582,
+        "narHash": "sha256-Ay3gu/FsbKkubA/76xgqYhdNZwUsgo1tPdBLsFwgt94=",
         "owner": "quickshell-mirror",
         "repo": "quickshell",
-        "rev": "50cdf9886803c0279aafa43d0b590abdc34f5766",
+        "rev": "854088c48c4020f35019851137197b1112a9b9ee",
         "type": "github"
       },
       "original": {
