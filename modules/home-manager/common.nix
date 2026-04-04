@@ -1,8 +1,6 @@
-{ config, pkgs, lib, osConfig ? {}, ags, dotfiles, ags-shell, ... }:
+{ config, pkgs, lib, osConfig ? {}, dotfiles, gruvshell, ... }:
 
 {
-  imports = [ ags.homeManagerModules.default ];
- 
   home.stateVersion = "25.11";
   home.sessionVariables.NIXOS_PRUNE_DAYS = "30";
   home.enableNixpkgsReleaseCheck = false;
@@ -45,6 +43,7 @@
   
   home.file.".config/kitty".source = "${dotfiles}/kitty/.config/kitty";
   home.file.".config/fastfetch".source = "${dotfiles}/fastfetch/.config/fastfetch";
+  home.file.".config/quickshell".source = gruvshell;
   home.packages = with pkgs; [
     meslo-lgs-nf
   ];
@@ -90,18 +89,5 @@
 
   };
 
-  #AGS
-  programs.ags = {
-    enable = true;
-    configDir = ags-shell;
-    extraPackages = [
-      ags.packages.${pkgs.stdenv.hostPlatform.system}.apps
-      ags.packages.${pkgs.stdenv.hostPlatform.system}.battery
-      ags.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
-      ags.packages.${pkgs.stdenv.hostPlatform.system}.network
-      ags.packages.${pkgs.stdenv.hostPlatform.system}.tray
-      ags.packages.${pkgs.stdenv.hostPlatform.system}.wireplumber
-    ];
-  };
-  
+
 }
