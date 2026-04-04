@@ -27,7 +27,7 @@
   #Direct symlink so package-lock.json can be edited independently
   home.file.".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/dotfiles/nvim/.config/nvim";
+    "${config.home.homeDirectory}/dotfiles/nvim-slim/.config/nvim";
 
   home.file.".config/fuzzel".source = "${dotfiles}/fuzzel/.config/fuzzel";
 
