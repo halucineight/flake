@@ -45,4 +45,6 @@ with pkgs;
   fastfetch
   quickshellFlake.packages.${pkgs.system}.default
   kdePackages.qtdeclarative
+  lua-language-server
+  stylua
 ]

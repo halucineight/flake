@@ -62,11 +62,11 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1774509080,
-        "narHash": "sha256-sY+2IKbAMngcxN1/PJmiteZWAkOcnM46s7CRZXs2l/0=",
+        "lastModified": 1775223619,
+        "narHash": "sha256-ESMqcTmU9orcbWoSx43bgRm8atTbqAFylyuECXI1vgk=",
         "ref": "refs/heads/main",
-        "rev": "ab840d5e739e29fdf7878cbc024a9a1d71e46fa7",
-        "revCount": 309,
+        "rev": "bca6e9a00114c7cc77e1932f8b23ff361c5f25d0",
+        "revCount": 312,
         "type": "git",
         "url": "ssh://git@github.com/halucineight/dotfiles.git"
       },
