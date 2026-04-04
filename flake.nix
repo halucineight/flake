@@ -41,14 +41,15 @@
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , home-manager
-    , ags
-    , quickshell
-    , dotfiles
-    , ags-shell
-    , ...
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ags,
+      quickshell,
+      dotfiles,
+      ags-shell,
+      ...
     }:
     {
       nixosConfigurations = {
@@ -68,6 +69,23 @@
             home-manager.nixosModules.home-manager
           ];
         };
+        ph315 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit
+              ags
+              dotfiles
+              ags-shell
+              ;
+            quickshellFlake = quickshell;
+          };
+          modules = [
+            ./configuration.nix
+            ./machines/ph315
+            home-manager.nixosModules.home-manager
+          ];
+        };
+
       };
     };
 
