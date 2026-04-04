@@ -47,4 +47,5 @@ with pkgs;
   kdePackages.qtdeclarative
   lua-language-server
   stylua
+  tree-sitter
 ]
