@@ -49,4 +49,5 @@ with pkgs;
   lua-language-server
   stylua
   tree-sitter
+  pavucontrol	
 ]
