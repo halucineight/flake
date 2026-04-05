@@ -18,7 +18,7 @@
   #Machine-specific monitor configuration
   #My monitors have different scaling needs
   home.file.".config/hypr/monitors.conf".source =
-    if (osConfig.networking.hostName or config.home.username) == "laptop"
+    if (osConfig.networking.hostName or config.home.username) == "ph315"
     then "${dotfiles}/hyprland/.config/hypr/monitors-laptop.conf"
     else "${dotfiles}/hyprland/.config/hypr/monitors-desktop.conf";
 
