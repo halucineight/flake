@@ -8,6 +8,7 @@
     ./modules/general/default.nix
     ./modules/flatpak/default.nix
     ./modules/bluetooth/default.nix
+    ./modules/podman/default.nix
     ./packages/default.nix
     ./modules/mullvad/default.nix
     ./modules/fonts/default.nix
