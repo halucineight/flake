@@ -2,7 +2,7 @@
 { config, pkgs, lib, ags, ... }:
 
 {
-  networking.hostName = "laptop";
+  networking.hostName = "ph315";
 
   imports = [
     ./hardware-configuration.nix
