@@ -3,11 +3,11 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1775315932,
-        "narHash": "sha256-hPGlOT9vHrkF+Mq4kyhOjfVptLLvHE+/VrXytU3nKp8=",
+        "lastModified": 1775358896,
+        "narHash": "sha256-FUZhHskVK1c2z0wEsdQFACzxEczfbcYnQN3W34JGbt8=",
         "ref": "refs/heads/main",
-        "rev": "1cd3e2e681ae324270ad38f2bd67689c4b3cf89f",
-        "revCount": 344,
+        "rev": "9cea03d35b1b5ee61f27f6c41a61606b4cef93c1",
+        "revCount": 346,
         "type": "git",
         "url": "ssh://git@github.com/halucineight/dotfiles.git"
       },
@@ -19,11 +19,11 @@
     "gruvshell": {
       "flake": false,
       "locked": {
-        "lastModified": 1775316017,
-        "narHash": "sha256-A3jocDa2YREp8oxjQZQvyEjqAAmv/UYirG9gSyYsalQ=",
+        "lastModified": 1775359802,
+        "narHash": "sha256-d7yKMaBF0xn0XmpO4Ub+0lJaNgIQTyUfFoKQNUlD18k=",
         "ref": "refs/heads/master",
-        "rev": "163cfb09b9dc6c79c9be8b6f43c8b6fc766ee75d",
-        "revCount": 33,
+        "rev": "b9ee3457548d9d93968cfd9fcae2402a2047c0eb",
+        "revCount": 34,
         "type": "git",
         "url": "ssh://git@github.com/halucineight/gruvshell.git"
       },
