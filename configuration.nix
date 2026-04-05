@@ -7,6 +7,7 @@
     ./modules/networking/default.nix
     ./modules/general/default.nix
     ./modules/flatpak/default.nix
+    ./modules/bluetooth/default.nix
     ./packages/default.nix
     ./modules/mullvad/default.nix
     ./modules/fonts/default.nix
