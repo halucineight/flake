@@ -32,6 +32,7 @@ with pkgs;
   pulseaudio
   wireplumber
   bluez
+  blueman
   networkmanagerapplet
   gnome-keyring
   libsecret
