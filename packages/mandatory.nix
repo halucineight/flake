@@ -50,4 +50,5 @@ with pkgs;
   stylua
   tree-sitter
   pavucontrol	
+  direnv
 ]
