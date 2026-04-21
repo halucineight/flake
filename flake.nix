@@ -44,6 +44,16 @@
       pkgs = import nixpkgs {
         inherit system;
       };
+      localConfig =
+        if builtins.pathExists ./local.nix then
+          import ./local.nix {
+            config = { };
+            lib = nixpkgs.lib;
+            inherit pkgs;
+          }
+        else
+          { };
+      enableElixirDevShell = localConfig.modules.enableElixirDevShell or false;
     in
     {
       nixosConfigurations = {
@@ -82,13 +92,17 @@
 
       };
 
-      devShells.${system}.elixir = pkgs.mkShell {
-        packages = with pkgs; [
-          elixir
-          erlang
-          rebar3
-        ];
+      devShells.${system} =
+        { }
+        // nixpkgs.lib.optionalAttrs enableElixirDevShell {
+          elixir = pkgs.mkShell {
+            packages = with pkgs; [
+              elixir
+              erlang
+              rebar3
+            ];
+          };
+        };
       };
-    };
 
 }
