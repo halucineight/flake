@@ -1,6 +1,7 @@
 { config
 , lib
 , pkgs
+, self
 , ...
 }:
 
@@ -9,6 +10,8 @@
     "nix-command"
     "flakes"
   ];
+
+  nix.registry.myflake.flake = self;
 
   nix.gc = {
     automatic = true; # enable periodic GC

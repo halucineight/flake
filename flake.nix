@@ -39,12 +39,19 @@
       gruvshell,
       ...
     }:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+      };
+    in
     {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
           specialArgs = {
             inherit
+              self
               dotfiles
               gruvshell
               ;
@@ -57,9 +64,10 @@
           ];
         };
         ph315 = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
           specialArgs = {
             inherit
+              self
               dotfiles
               gruvshell
               ;
@@ -72,6 +80,14 @@
           ];
         };
 
+      };
+
+      devShells.${system}.elixir = pkgs.mkShell {
+        packages = with pkgs; [
+          elixir
+          erlang
+          rebar3
+        ];
       };
     };
 
