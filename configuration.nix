@@ -6,6 +6,7 @@
     ./modules/users/default.nix
     ./modules/networking/default.nix
     ./modules/general/default.nix
+    ./modules/devshell/default.nix
     ./modules/flatpak/default.nix
     ./modules/bluetooth/default.nix
     ./modules/podman/default.nix
@@ -36,5 +37,4 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05";
 }
-
 

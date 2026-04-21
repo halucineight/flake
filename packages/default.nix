@@ -9,8 +9,9 @@
   config = {
     environment.systemPackages =
       let
-        mandatory = import ./mandatory.nix { inherit pkgs quickshellFlake;};
+        mandatory = import ./mandatory.nix { inherit pkgs quickshellFlake; };
+        optional = import ./optional.nix { inherit config lib pkgs; };
       in
-      mandatory;
+      mandatory ++ optional;
   };
 }
