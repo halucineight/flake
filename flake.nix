@@ -103,6 +103,7 @@
 	      esbuild
               rebar3
 	      inotify-tools
+	      pgcli
             ];
           };
         };
