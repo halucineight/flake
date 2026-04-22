@@ -1,8 +1,16 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 
 with pkgs;
-lib.optional config.modules.enableElixirDevShell elixir-ls
+let
+  elixirGlobalDeps = lib.optionals config.modules.enableElixirDevShell [
+    elixir-ls
+    tailwindcss-language-server
+  ];
+
+in
+elixirGlobalDeps
