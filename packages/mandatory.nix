@@ -1,4 +1,4 @@
-{ pkgs, quickshellFlake, ...}:
+{ pkgs, quickshellFlake, ... }:
 
 #These packages don't have Nix-style services
 
@@ -49,6 +49,8 @@ with pkgs;
   lua-language-server
   stylua
   tree-sitter
-  pavucontrol	
+  pavucontrol
   direnv
+  nixd
+  nixfmt
 ]
