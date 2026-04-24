@@ -53,4 +53,5 @@ with pkgs;
   direnv
   nixd
   nixfmt
+  nh
 ]
