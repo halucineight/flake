@@ -14,6 +14,7 @@
     ./nvidia.nix
     ./fstab.nix
     ../../modules/home-manager
+    ./services.nix
   ];
 
   #Packages and services specific to this computer will go here:
