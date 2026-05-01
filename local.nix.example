@@ -1,0 +1,23 @@
+{ config
+, lib
+, pkgs
+, ...
+}:
+
+{
+
+  time.timeZone = "Etc/UTC";
+
+  users.primaryUser = "your-username";
+
+  #For games and stuff
+  users.createPlaygroundUser = false;
+
+  modules.enableFlatpak = false;
+
+  modules.enableElixirDevShell = false;
+
+  services.enableMullvad = false;
+
+  modules.enablePodman = false;
+}
