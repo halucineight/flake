@@ -51,7 +51,5 @@ with pkgs;
   tree-sitter
   pavucontrol
   direnv
-  nixd
-  nixfmt
   nh
 ]
