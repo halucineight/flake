@@ -9,7 +9,7 @@
     ./nvidia.nix
     ../../modules/home-manager
   ];
-  # Use latest kernel.
+  # Use lts kernel.
   boot.kernelPackages = pkgs.linuxPackages_6_18;
 
 }
