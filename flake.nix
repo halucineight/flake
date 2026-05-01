@@ -97,14 +97,16 @@
             packages = with pkgs; [
               elixir
               erlang
-	      tailwindcss_4
-	      esbuild
+              tailwindcss_4
+              esbuild
               rebar3
-	      inotify-tools
-	      pgcli
+              inotify-tools
+              pgcli
+              elixir-ls
+              tailwindcss-language-server
             ];
           };
         };
-      };
+    };
 
 }
