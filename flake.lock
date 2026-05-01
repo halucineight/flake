@@ -3,17 +3,17 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1775374192,
-        "narHash": "sha256-H4FOZI+qrOcGrHPpAKdSY0ewd4GPADblB+KvZmqtkfc=",
-        "ref": "refs/heads/main",
-        "rev": "15efa94d1be33e585d68b841eec7a1324473f092",
-        "revCount": 355,
-        "type": "git",
-        "url": "ssh://git@github.com/halucineight/dotfiles.git"
+        "lastModified": 1776867586,
+        "narHash": "sha256-DnHDrKCBBxpuV6+Q+KPZh46ULGDiUKT26ltLQu6ZAho=",
+        "owner": "halucineight",
+        "repo": "dotfiles",
+        "rev": "fcf07b823ce3d4aa4780c3d9d5d8f9afa0448b85",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/halucineight/dotfiles.git"
+        "owner": "halucineight",
+        "repo": "dotfiles",
+        "type": "github"
       }
     },
     "gruvshell": {

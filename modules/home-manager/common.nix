@@ -7,8 +7,6 @@
 
   programs.home-manager.enable = true;
 
-  home.file.".p10k.zsh".source = "${dotfiles}/zsh/.p10k.zsh";
-
   home.file.".config/wallpapers".source = "${dotfiles}/wallpapers";
 
   home.file.".config/hypr/hyprland.conf".source = "${dotfiles}/hyprland/.config/hypr/hyprland.conf";
@@ -25,7 +23,7 @@
   #Direct symlink so package-lock.json can be edited independently
   home.file.".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/dotfiles/nvim-slim/.config/nvim";
+    "${config.home.homeDirectory}/dotfiles/nvim/.config/nvim";
 
   home.file.".config/fuzzel".source = "${dotfiles}/fuzzel/.config/fuzzel";
 
@@ -66,20 +64,15 @@
 
     oh-my-zsh = {
       enable = true;
+      theme = "robbyrussell";
       plugins = [
         "git"
         "sudo"
         "command-not-found"
       ];
-      custom = "$HOME/.oh-my-zsh-custom";
     };
 
     plugins = [
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
       {
         name = "zsh-autosuggestions";
         src = pkgs.zsh-autosuggestions;
