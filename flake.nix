@@ -19,7 +19,7 @@
     };
 
     dotfiles = {
-      url = "git+ssh://git@github.com/halucineight/dotfiles.git";
+      url = "github:halucineight/dotfiles";
       flake = false;
     };
 
