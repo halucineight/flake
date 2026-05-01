@@ -13,6 +13,7 @@
     ./packages/default.nix
     ./modules/mullvad/default.nix
     ./modules/fonts/default.nix
+    ./overlays/default.nix
     ./nix.nix
   ] ++ lib.optional (builtins.pathExists ./local.nix) ./local.nix;
 
