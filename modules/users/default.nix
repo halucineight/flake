@@ -1,11 +1,10 @@
 { config, lib, pkgs, ... }:
-
+#TODO: This is kinda clunky, fix later
 {
   options = {
     users.primaryUser = lib.mkOption {
       type = lib.types.str;
-      default = "CHANGEME"; # Placeholder - override in local.nix
-      description = "Primary user for this system, SET THIS IN local.nix!";
+      description = "Your primary user";
       example = "myusername";
     };
 

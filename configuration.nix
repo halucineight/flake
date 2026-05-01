@@ -15,7 +15,8 @@
     ./modules/fonts/default.nix
     ./overlays/default.nix
     ./nix.nix
-  ] ++ lib.optional (builtins.pathExists ./local.nix) ./local.nix;
+    ./local.nix
+  ];
 
   time.timeZone = lib.mkDefault "Etc/UTC";
   
@@ -38,4 +39,3 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05";
 }
-
