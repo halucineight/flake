@@ -24,7 +24,7 @@
     };
 
     gruvshell = {
-      url = "git+ssh://git@github.com/halucineight/gruvshell.git";
+      url = "https://github.com/halucineight/gruvshell.git";
       flake = false;
     };
   };
@@ -46,15 +46,11 @@
         inherit system;
         inherit overlays;
       };
-      localConfig =
-        if builtins.pathExists ./local.nix then
-          import ./local.nix {
-            config = { };
-            lib = nixpkgs.lib;
-            inherit pkgs;
-          }
-        else
-          { };
+      localConfig = import ./local.nix {
+        config = { };
+        lib = nixpkgs.lib;
+        inherit pkgs;
+      };
       enableElixirDevShell = localConfig.modules.enableElixirDevShell or false;
     in
     {
