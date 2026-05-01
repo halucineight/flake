@@ -24,7 +24,7 @@
     };
 
     gruvshell = {
-      url = "https://github.com/halucineight/gruvshell.git";
+      url = "github:halucineight/gruvshell";
       flake = false;
     };
   };

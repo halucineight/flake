@@ -19,13 +19,17 @@
     "gruvshell": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-t9yvFBzJno1XSHO23gBv/EIO6AtUah82Ra7Sgh083rE=",
-        "type": "file",
-        "url": "https://github.com/halucineight/gruvshell.git"
+        "lastModified": 1777620472,
+        "narHash": "sha256-eyvA/7eeBtRcTpF2VJ+rfKJgG0Q01H1puxQF4LThkM8=",
+        "owner": "halucineight",
+        "repo": "gruvshell",
+        "rev": "940c41d23bd156a9e986d871cc296a88dfbd2d45",
+        "type": "github"
       },
       "original": {
-        "type": "file",
-        "url": "https://github.com/halucineight/gruvshell.git"
+        "owner": "halucineight",
+        "repo": "gruvshell",
+        "type": "github"
       }
     },
     "home-manager": {
