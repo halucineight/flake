@@ -41,8 +41,10 @@
     }:
     let
       system = "x86_64-linux";
+      overlays = (import ./overlays/default.nix).nixpkgs.overlays;
       pkgs = import nixpkgs {
         inherit system;
+        inherit overlays;
       };
       localConfig =
         if builtins.pathExists ./local.nix then
