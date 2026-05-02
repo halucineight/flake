@@ -51,8 +51,10 @@
         lib = nixpkgs.lib;
         inherit pkgs;
       };
-      enableElixirDevShell = localConfig.modules.enableElixirDevShell or false;
-      enableRustDevShell = localConfig.modules.enableRustDevShell or false;
+      devShellConfig = import ./modules/devshell/shells.nix {
+        lib = nixpkgs.lib;
+        inherit pkgs localConfig;
+      };
     in
     {
       nixosConfigurations = {
@@ -91,34 +93,7 @@
 
       };
 
-      devShells.${system} =
-        { }
-        // nixpkgs.lib.optionalAttrs enableElixirDevShell {
-          elixir = pkgs.mkShell {
-            packages = with pkgs; [
-              elixir
-              erlang
-              tailwindcss_4
-              esbuild
-              rebar3
-              inotify-tools
-              pgcli
-              elixir-ls
-              tailwindcss-language-server
-            ];
-          };
-        }
-        // nixpkgs.lib.optionalAttrs enableRustDevShell {
-          rust = pkgs.mkShell {
-            packages = with pkgs; [
-              cargo
-              clippy
-              rust-analyzer
-              rustc
-              rustfmt
-            ];
-          };
-        };
+      devShells.${system} = devShellConfig.devShells;
     };
 
 }
