@@ -13,6 +13,7 @@ in
     options = {
       modules.enableElixirDevShell = lib.mkEnableOption "Elixir dev shell";
       modules.enableRustDevShell = lib.mkEnableOption "Rust dev shell";
+      modules.enableDotNetDevShell = lib.mkEnableOption "dotnet dev shell";
     };
   };
 
@@ -41,6 +42,15 @@ in
           rust-analyzer
           rustc
           rustfmt
+        ];
+      };
+    }
+    // lib.optionalAttrs cfg.enableDotNetDevShell {
+      dotnet = pkgs.mkShell {
+        packages = with pkgs; [
+          dotnet-sdk_10
+          dotnet-aspnetcore_10
+          dotnet-runtime_10
         ];
       };
     };

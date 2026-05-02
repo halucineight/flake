@@ -16,7 +16,10 @@
   modules.enableFlatpak = false;
 
   modules.enableElixirDevShell = false;
+  
   modules.enableRustDevShell = false;
+
+  modules.enableDotnetDevShell = false;
 
   services.enableMullvad = false;
 
