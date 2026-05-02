@@ -11,9 +11,21 @@ in
 {
   module = {
     options = {
-      modules.enableElixirDevShell = lib.mkEnableOption "Elixir dev shell";
-      modules.enableRustDevShell = lib.mkEnableOption "Rust dev shell";
-      modules.enableDotNetDevShell = lib.mkEnableOption "dotnet dev shell";
+      modules.enableElixirDevShell = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Enable Elixir devshell";
+      };
+      modules.enableRustDevShell = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Enable Rust devshell";
+      };
+      modules.enableDotnetDevShell = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Enable dotnet devshell";
+      };
     };
   };
 
