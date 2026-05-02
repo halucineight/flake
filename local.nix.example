@@ -19,7 +19,7 @@
   
   modules.enableRustDevShell = false;
 
-  modules.enableDotnetDevShell = false;
+  modules.enableDotNetDevShell = false;
 
   services.enableMullvad = false;
 

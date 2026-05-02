@@ -21,7 +21,7 @@ in
         default = false;
         description = "Enable Rust devshell";
       };
-      modules.enableDotnetDevShell = lib.mkOption {
+      modules.enableDotNetDevShell = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description = "Enable dotnet devshell";
