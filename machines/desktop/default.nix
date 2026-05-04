@@ -1,9 +1,10 @@
 # Desktop machine-specific configuration
-{ config
-, pkgs
-, lib
-, ags
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ags,
+  ...
 }:
 
 {
@@ -29,6 +30,10 @@
       "--mode"
       "auto"
     ];
+  };
+  programs.nh = {
+    enable = true;
+    flake = "path:/home/${config.users.primaryUser}/flake";
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
