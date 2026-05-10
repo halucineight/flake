@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -33,6 +37,7 @@
     {
       self,
       nixpkgs,
+      disko,
       home-manager,
       quickshell,
       dotfiles,
@@ -85,6 +90,7 @@
             quickshellFlake = quickshell;
           };
           modules = [
+            disko.nixosModules.disko
             ./configuration.nix
             ./machines/ph315
             home-manager.nixosModules.home-manager
