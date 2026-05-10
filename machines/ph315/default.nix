@@ -6,6 +6,7 @@
 
   imports = [
     ./hardware-configuration.nix
+    ./disko.nix
     ./nvidia.nix
     ../../modules/home-manager
   ];
