@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -12,6 +17,7 @@
     ./modules/podman/default.nix
     ./packages/default.nix
     ./modules/mullvad/default.nix
+    ./modules/thunar/default.nix
     ./modules/fonts/default.nix
     ./overlays/default.nix
     ./nix.nix
@@ -19,7 +25,7 @@
   ];
 
   time.timeZone = lib.mkDefault "Etc/UTC";
-  
+
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
