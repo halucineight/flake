@@ -54,6 +54,7 @@ in
           rust-analyzer
           rustc
           rustfmt
+          mdbook
         ];
       };
     }
