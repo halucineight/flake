@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 #TODO: This is kinda clunky, fix later
 {
   options = {
@@ -16,6 +21,8 @@
   };
 
   config = {
+    services.udev.packages = [ pkgs.openocd ];
+    users.groups.plugdev = { };
     users.users.${config.users.primaryUser} = {
       isNormalUser = true;
       shell = pkgs.zsh;
@@ -24,6 +31,8 @@
         "networkmanager"
         "video"
         "input"
+        "dialout"
+        "plugdev"
       ];
       packages = with pkgs; [
         tree

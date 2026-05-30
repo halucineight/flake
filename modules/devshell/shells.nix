@@ -55,6 +55,8 @@ in
           rustc
           rustfmt
           mdbook
+          rustup
+          probe-rs-tools
         ];
       };
     }
