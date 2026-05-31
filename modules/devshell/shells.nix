@@ -57,6 +57,7 @@ in
           mdbook
           rustup
           probe-rs-tools
+          cargo-generate
         ];
       };
     }
