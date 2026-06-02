@@ -39,11 +39,11 @@
     "gruvshell": {
       "flake": false,
       "locked": {
-        "lastModified": 1777620472,
-        "narHash": "sha256-eyvA/7eeBtRcTpF2VJ+rfKJgG0Q01H1puxQF4LThkM8=",
+        "lastModified": 1780405078,
+        "narHash": "sha256-mdY4lScod2DuFueSUKcprSIUpbCDkq1djOtv3kazz1M=",
         "owner": "halucineight",
         "repo": "gruvshell",
-        "rev": "940c41d23bd156a9e986d871cc296a88dfbd2d45",
+        "rev": "6eedd2a158214285740cd044e7fc0f75d076ef91",
         "type": "github"
       },
       "original": {
