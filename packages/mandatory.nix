@@ -52,4 +52,5 @@ with pkgs;
   pavucontrol
   direnv
   nh
+  tmux
 ]
