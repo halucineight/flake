@@ -39,7 +39,7 @@ with pkgs;
   polkit_gnome
   papirus-icon-theme
   librsvg
-  eog
+  kdePackages.gwenview
   exiftool
   mpv
   yt-dlp
