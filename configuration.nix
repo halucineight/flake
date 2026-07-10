@@ -10,7 +10,12 @@
     ./modules/bootloader/default.nix
     ./modules/users/default.nix
     ./modules/networking/default.nix
-    ./modules/general/default.nix
+    ./modules/apps/default.nix
+    ./modules/wm/hyprland/default.nix
+    ./modules/display-manager/sddm/default.nix
+    ./modules/audio/pipewire/default.nix
+    ./modules/power/upower/default.nix
+    ./modules/ssh/default.nix
     ./modules/devshell/default.nix
     ./modules/flatpak/default.nix
     ./modules/bluetooth/default.nix
