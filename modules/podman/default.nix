@@ -30,17 +30,7 @@ in
         defaultNetwork.settings.dns_enabled = true;
       };
 
-      users.users.${config.users.primaryUser}.extraGroups = [
-        "podman"
-        "libvirtd"
-      ];
-
-      users.users.playground = lib.mkIf config.users.createPlaygroundUser {
-        extraGroups = [ "podman" ];
-      };
-
-      environment.systemPackages = basePkgs; 
+      environment.systemPackages = basePkgs;
 
     };
 }
-
