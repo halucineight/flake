@@ -53,4 +53,5 @@ with pkgs;
   direnv
   nh
   tmux
+  aria2
 ]
