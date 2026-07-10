@@ -13,6 +13,7 @@
     ./modules/apps/default.nix
     ./modules/wm/hyprland/default.nix
     ./modules/display-manager/sddm/default.nix
+    ./modules/secrets/default.nix
     ./modules/audio/pipewire/default.nix
     ./modules/power/upower/default.nix
     ./modules/ssh/default.nix
