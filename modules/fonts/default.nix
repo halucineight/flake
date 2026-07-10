@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   fonts.packages = with pkgs; [
@@ -12,4 +12,6 @@
     noto-fonts-color-emoji
     nerd-fonts.departure-mono
   ];
+
+  programs.gdk-pixbuf.modulePackages = [ pkgs.librsvg ];
 }
