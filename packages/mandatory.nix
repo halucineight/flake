@@ -54,4 +54,5 @@ with pkgs;
   nh
   tmux
   aria2
+  jq
 ]
