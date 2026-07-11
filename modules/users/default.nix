@@ -4,7 +4,20 @@
   pkgs,
   ...
 }:
-#TODO: This is kinda clunky, fix later
+
+let
+  commonGroups = [
+    "networkmanager"
+    "input"
+    "plugdev"
+  ];
+  primaryExtraGroups = [
+    "wheel"
+    "video"
+    "dialout"
+  ];
+  userNames = map (u: u.name) config.users.list;
+in
 {
   options = {
     users.primaryUser = lib.mkOption {
@@ -13,42 +26,54 @@
       example = "myusername";
     };
 
-    users.createPlaygroundUser = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Whether to create the playground user account";
+    users.list = lib.mkOption {
+      type = lib.types.listOf (
+        lib.types.submodule {
+          options = {
+            name = lib.mkOption {
+              type = lib.types.str;
+              default = "";
+            };
+            extraGroups = lib.mkOption {
+              type = lib.types.listOf lib.types.str;
+              default = [ ];
+            };
+            packages = lib.mkOption {
+              type = lib.types.listOf lib.types.package;
+              default = [ ];
+            };
+          };
+        }
+      );
+      default = [ ];
+      description = "List of user accounts to create";
     };
   };
 
   config = {
+    assertions = [
+      {
+        assertion = builtins.elem config.users.primaryUser userNames;
+        message = "users.primaryUser must be present in users.list.";
+      }
+    ];
+
     services.udev.packages = [ pkgs.openocd ];
     users.groups.plugdev = { };
-    users.users.${config.users.primaryUser} = {
-      isNormalUser = true;
-      shell = pkgs.zsh;
-      extraGroups = [
-        "wheel"
-        "networkmanager"
-        "video"
-        "input"
-        "dialout"
-        "plugdev"
-      ];
-      packages = with pkgs; [
-        tree
-      ];
-    };
 
-    #Optional playground user for games and stuff
-    users.users.playground = lib.mkIf config.users.createPlaygroundUser {
-      isNormalUser = true;
-      shell = pkgs.zsh;
-      extraGroups = [
-        "networkmanager"
-      ];
-      packages = with pkgs; [
-        tree
-      ];
-    };
+    users.users = builtins.listToAttrs (
+      map (
+        u:
+        lib.nameValuePair u.name {
+          isNormalUser = true;
+          shell = pkgs.zsh;
+          extraGroups =
+            commonGroups
+            ++ u.extraGroups
+            ++ (lib.optionals (u.name == config.users.primaryUser) primaryExtraGroups);
+          packages = u.packages ++ (lib.optionals (u.name == config.users.primaryUser) [ pkgs.tree ]);
+        }
+      ) config.users.list
+    );
   };
 }
