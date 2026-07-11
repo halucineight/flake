@@ -1,47 +1,36 @@
-{ config
-, lib
-, dotfiles
-, gruvshell
-, ...
+{
+  config,
+  lib,
+  dotfiles,
+  gruvshell,
+  ...
 }:
 
-{
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    extraSpecialArgs = {
-      osConfig = config;
-      inherit dotfiles gruvshell;
-    };
-
-    users.${config.users.primaryUser} = {
+let
+  mkHomeUser =
+    user:
+    lib.nameValuePair user.name {
       imports = [
         ./common.nix
         ./gtk.nix
       ];
-
-      # User-specific settings
-      home.username = config.users.primaryUser;
-      home.homeDirectory = "/home/${config.users.primaryUser}";
 
       programs.ssh = {
         enable = true;
         enableDefaultConfig = false;
         settings."*".AddKeysToAgent = "yes";
       };
+    };
+in
+{
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
 
+    extraSpecialArgs = {
+      inherit dotfiles gruvshell;
     };
 
-    users.playground = lib.mkIf config.users.createPlaygroundUser {
-      imports = [ 
-        ./common.nix
-        ./gtk.nix
-      ];
-
-      home.username = "playground";
-      home.homeDirectory = "/home/playground";
-
-    };
+    users = builtins.listToAttrs (map mkHomeUser config.users.list);
   };
-
 }
