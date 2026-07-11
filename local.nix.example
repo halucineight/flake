@@ -1,22 +1,29 @@
-{ config
-, lib
-, pkgs
-, ...
-}:
+{ pkgs, ... }:
 
 {
 
   time.timeZone = "Etc/UTC";
 
+ # this user must exist in the list below, evaluation fails without it 
   users.primaryUser = "your-username";
 
-  #For games and stuff
-  users.createPlaygroundUser = false;
+  users.list = [
+    {
+      name = "your-username";
+      extraGroups = [ "wheel" "networkmanager" "video" "input" "dialout" "plugdev" ];
+      packages = with pkgs; [ tree ];
+    }
+    {
+      name = "playground";
+      extraGroups = [ "networkmanager" ];
+      packages = with pkgs; [ tree ];
+    }
+  ];
 
   modules.enableFlatpak = false;
 
   modules.enableElixirDevShell = false;
-  
+
   modules.enableRustDevShell = false;
 
   modules.enableDotNetDevShell = false;
