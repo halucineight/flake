@@ -25,7 +25,7 @@
   ];
 
   services.hardware.deepcool-digital-linux = {
-    enable = true;
+    enable = false;
     extraArgs = [
       "--mode"
       "auto"
