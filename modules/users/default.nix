@@ -6,16 +6,6 @@
 }:
 
 let
-  commonGroups = [
-    "networkmanager"
-    "input"
-    "plugdev"
-  ];
-  primaryExtraGroups = [
-    "wheel"
-    "video"
-    "dialout"
-  ];
   userNames = map (u: u.name) config.users.list;
 in
 {
@@ -59,7 +49,10 @@ in
     ];
 
     services.udev.packages = [ pkgs.openocd ];
-    users.groups.plugdev = { };
+    users.groups = {
+      plugdev = { };
+      shared = { };
+    };
 
     users.users = builtins.listToAttrs (
       map (
@@ -67,10 +60,7 @@ in
         lib.nameValuePair u.name {
           isNormalUser = true;
           shell = pkgs.zsh;
-          extraGroups =
-            commonGroups
-            ++ u.extraGroups
-            ++ (lib.optionals (u.name == config.users.primaryUser) primaryExtraGroups);
+          extraGroups = u.extraGroups;
           packages = u.packages ++ (lib.optionals (u.name == config.users.primaryUser) [ pkgs.tree ]);
         }
       ) config.users.list
