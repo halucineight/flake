@@ -22,6 +22,7 @@
   #If the list gets too long I'll create a new file
   environment.systemPackages = with pkgs; [
     nvtopPackages.nvidia
+    gimp
   ];
 
   services.hardware.deepcool-digital-linux = {
