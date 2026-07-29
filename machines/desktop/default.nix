@@ -1,4 +1,4 @@
-# Desktop machine-specific configuration
+# resktop machine-specific configuration
 {
   config,
   pkgs,
@@ -23,6 +23,7 @@
   environment.systemPackages = with pkgs; [
     nvtopPackages.nvidia
     gimp
+    python313
   ];
 
   services.hardware.deepcool-digital-linux = {
