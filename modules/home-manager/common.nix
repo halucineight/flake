@@ -9,16 +9,20 @@
 
   home.file.".config/wallpapers".source = "${dotfiles}/wallpapers";
 
-  home.file.".config/hypr/hyprland.conf".source = "${dotfiles}/hyprland/.config/hypr/hyprland.conf";
+  home.file.".config/hypr/hyprland.lua".source = "${dotfiles}/hyprland/.config/hypr/hyprland.lua";
+  home.file.".config/hypr/env.lua".source = "${dotfiles}/hyprland/.config/hypr/env.lua";
+  home.file.".config/hypr/keybinds.lua".source = "${dotfiles}/hyprland/.config/hypr/keybinds.lua";
+  home.file.".config/hypr/startup.lua".source = "${dotfiles}/hyprland/.config/hypr/startup.lua";
+  home.file.".config/hypr/windowrules.lua".source = "${dotfiles}/hyprland/.config/hypr/windowrules.lua";
   home.file.".config/hypr/hyprlock.conf".source = "${dotfiles}/hyprland/.config/hypr/hyprlock.conf";
   home.file.".config/hypr/hyprpaper.conf".source = "${dotfiles}/hyprland/.config/hypr/hyprpaper.conf";
 
   #Machine-specific monitor configuration
   #My monitors have different scaling needs
-  home.file.".config/hypr/monitors.conf".source =
+  home.file.".config/hypr/monitors.lua".source =
     if (osConfig.networking.hostName or config.home.username) == "ph315"
-    then "${dotfiles}/hyprland/.config/hypr/monitors-laptop.conf"
-    else "${dotfiles}/hyprland/.config/hypr/monitors-desktop.conf";
+    then "${dotfiles}/hyprland/.config/hypr/monitors-laptop.lua"
+    else "${dotfiles}/hyprland/.config/hypr/monitors-desktop.lua";
 
   #Direct symlink so package-lock.json can be edited independently
   home.file.".config/nvim".source =
