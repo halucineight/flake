@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 let
   cfg = config.services;
@@ -18,7 +19,6 @@ in
   config = lib.mkIf cfg.enableMullvad {
     services.mullvad-vpn.enable = true;
     services.mullvad-vpn.enableExcludeWrapper = true;
-    services.mullvad-vpn.package = pkgs.mullvad-vpn;
-
+    services.mullvad-vpn.gui.enable = true;
   };
 }
