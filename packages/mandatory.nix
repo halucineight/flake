@@ -55,4 +55,6 @@ with pkgs;
   tmux
   aria2
   jq
+  lua
+  hyprshutdown
 ]
