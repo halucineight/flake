@@ -1,4 +1,12 @@
-{ config, pkgs, lib, osConfig ? {}, dotfiles, gruvshell, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  osConfig ? { },
+  dotfiles,
+  gruvshell,
+  ...
+}:
 
 {
   home.stateVersion = "25.11";
@@ -13,26 +21,28 @@
   home.file.".config/hypr/env.lua".source = "${dotfiles}/hyprland/.config/hypr/env.lua";
   home.file.".config/hypr/keybinds.lua".source = "${dotfiles}/hyprland/.config/hypr/keybinds.lua";
   home.file.".config/hypr/startup.lua".source = "${dotfiles}/hyprland/.config/hypr/startup.lua";
-  home.file.".config/hypr/windowrules.lua".source = "${dotfiles}/hyprland/.config/hypr/windowrules.lua";
+  home.file.".config/hypr/windowrules.lua".source =
+    "${dotfiles}/hyprland/.config/hypr/windowrules.lua";
   home.file.".config/hypr/hyprlock.conf".source = "${dotfiles}/hyprland/.config/hypr/hyprlock.conf";
   home.file.".config/hypr/hyprpaper.conf".source = "${dotfiles}/hyprland/.config/hypr/hyprpaper.conf";
+
+  home.file.".config/tmux/tmux.conf".source = "${dotfiles}/tmux/.config/tmux/tmux.conf";
 
   #Machine-specific monitor configuration
   #My monitors have different scaling needs
   home.file.".config/hypr/monitors.lua".source =
-    if (osConfig.networking.hostName or config.home.username) == "ph315"
-    then "${dotfiles}/hyprland/.config/hypr/monitors-laptop.lua"
-    else "${dotfiles}/hyprland/.config/hypr/monitors-desktop.lua";
+    if (osConfig.networking.hostName or config.home.username) == "ph315" then
+      "${dotfiles}/hyprland/.config/hypr/monitors-laptop.lua"
+    else
+      "${dotfiles}/hyprland/.config/hypr/monitors-desktop.lua";
 
   #Direct symlink so package-lock.json can be edited independently
   home.file.".config/nvim".source =
-    config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/dotfiles/nvim/.config/nvim";
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim/.config/nvim";
 
   home.file.".config/fuzzel".source = "${dotfiles}/fuzzel/.config/fuzzel";
 
   home.file.".config/yazi".source = "${dotfiles}/yazi/.config/yazi";
-
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -42,7 +52,7 @@
       cursor-theme = "breeze_cursors";
     };
   };
-  
+
   home.file.".config/kitty".source = "${dotfiles}/kitty/.config/kitty";
   home.file.".config/fastfetch".source = "${dotfiles}/fastfetch/.config/fastfetch";
   home.file.".config/quickshell".source = gruvshell;
@@ -90,6 +100,5 @@
     ];
 
   };
-
 
 }
