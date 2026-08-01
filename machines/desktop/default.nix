@@ -24,6 +24,8 @@
     nvtopPackages.nvidia
     gimp
     python313
+    localsend
+    nixos-firewall-tool
   ];
 
   services.hardware.deepcool-digital-linux = {
