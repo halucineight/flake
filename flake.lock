@@ -23,11 +23,11 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1785419240,
-        "narHash": "sha256-epZiv9Drb6HUkWJ4TYZ829yship9/PS+Bo8CiDnUFR8=",
+        "lastModified": 1785605044,
+        "narHash": "sha256-fh3Z+/jWxtokkIa4ykNpj1y6DMI6KTT8clRGnlwsj0c=",
         "owner": "halucineight",
         "repo": "dotfiles",
-        "rev": "f9cd9ac996d2a9f100b85f0cdeb1dbc01368360f",
+        "rev": "50a03a59bb30d83f802c56a7a7de1c90962f129d",
         "type": "github"
       },
       "original": {
