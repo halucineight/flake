@@ -16,6 +16,7 @@
     ./fstab.nix
     ../../modules/home-manager
     ./services.nix
+    ./modules/sniffnet/default.nix
   ];
 
   #Packages and services specific to this computer will go here:
