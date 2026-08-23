@@ -27,6 +27,7 @@
     python313
     localsend
     nixos-firewall-tool
+    losslesscut-bin
   ];
 
   services.hardware.deepcool-digital-linux = {
