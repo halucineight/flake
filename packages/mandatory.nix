@@ -56,5 +56,6 @@ with pkgs;
   aria2
   jq
   lua
+  vscode-langservers-extracted
   hyprshutdown
 ]
