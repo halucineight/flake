@@ -31,6 +31,10 @@
       url = "github:halucineight/gruvshell";
       flake = false;
     };
+    gruvboxTmux = {
+      url = "github:egel/tmux-gruvbox";
+      flake = false;
+    };
   };
 
   outputs =
@@ -42,6 +46,7 @@
       quickshell,
       dotfiles,
       gruvshell,
+      gruvboxTmux,
       ...
     }:
     let
@@ -70,6 +75,7 @@
               self
               dotfiles
               gruvshell
+              gruvboxTmux
               ;
             quickshellFlake = quickshell;
           };
@@ -86,6 +92,7 @@
               self
               dotfiles
               gruvshell
+              gruvboxTmux
               ;
             quickshellFlake = quickshell;
           };

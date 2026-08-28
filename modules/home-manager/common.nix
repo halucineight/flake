@@ -5,6 +5,7 @@
   osConfig ? { },
   dotfiles,
   gruvshell,
+  gruvboxTmux,
   ...
 }:
 
@@ -27,6 +28,8 @@
   home.file.".config/hypr/hyprpaper.conf".source = "${dotfiles}/hyprland/.config/hypr/hyprpaper.conf";
 
   home.file.".config/tmux/tmux.conf".source = "${dotfiles}/tmux/.config/tmux/tmux.conf";
+  home.file.".config/tmux/plugins/tmux-gruvbox".source =
+    "${gruvboxTmux}";
 
   #Machine-specific monitor configuration
   #My monitors have different scaling needs

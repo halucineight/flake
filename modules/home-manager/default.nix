@@ -3,6 +3,7 @@
   lib,
   dotfiles,
   gruvshell,
+  gruvboxTmux,
   ...
 }:
 
@@ -28,7 +29,7 @@ in
     useUserPackages = true;
 
     extraSpecialArgs = {
-      inherit dotfiles gruvshell;
+      inherit dotfiles gruvshell gruvboxTmux;
     };
 
     users = builtins.listToAttrs (map mkHomeUser config.users.list);
