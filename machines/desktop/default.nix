@@ -9,6 +9,19 @@
 
 {
   networking.hostName = "desktop";
+  networking.interfaces.enp12s0 = {
+    useDHCP = false;
+    ipv4.addresses = [
+      {
+        address = "192.168.50.2";
+        prefixLength = 24;
+      }
+    ];
+    wakeOnLan.enable = true;
+  };
+  networking.networkmanager.unmanaged = [
+    "interface-name:enp12s0"
+  ];
 
   imports = [
     ./hardware-configuration.nix
