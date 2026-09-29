@@ -41,6 +41,7 @@
     localsend
     nixos-firewall-tool
     losslesscut-bin
+    bubblewrap
   ];
 
   services.hardware.deepcool-digital-linux = {
