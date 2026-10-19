@@ -68,6 +68,11 @@
     in
     {
       nixosConfigurations = {
+        raspberry-pi = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+          modules = [ ./machines/raspberry-pi ];
+        };
+
         desktop = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {

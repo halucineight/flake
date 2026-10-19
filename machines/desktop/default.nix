@@ -9,6 +9,9 @@
 
 {
   networking.hostName = "desktop";
+
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   networking.interfaces.enp12s0 = {
     useDHCP = false;
     ipv4.addresses = [
