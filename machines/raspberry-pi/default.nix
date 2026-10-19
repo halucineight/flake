@@ -59,10 +59,14 @@
   };
 
   environment.systemPackages = with pkgs; [
+    busybox
     vim
     git
     nh
   ];
+
+  environment.shellAliases.wakedesktop =
+    "sudo ${pkgs.busybox}/bin/busybox ether-wake -b -i end0 04:7c:16:d7:12:12";
 
   system.stateVersion = "26.05";
 }
