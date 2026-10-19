@@ -13,7 +13,12 @@
   networking.networkmanager.enable = true;
   networking.dhcpcd.enable = false;
 
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+    useRoutingFeatures = "server";
+    extraSetFlags = [ "--advertise-routes=192.168.29.0/24" ];
+  };
 
   services.openssh = {
     enable = true;
