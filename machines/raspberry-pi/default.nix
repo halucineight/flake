@@ -38,6 +38,12 @@
     max-jobs = 1;
     cores = 1;
   };
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 3d";
+  };
+
   zramSwap.enable = true;
 
   users.users.piman = {
@@ -51,6 +57,12 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBWSsSSdAcrPqfVPbL1OmaTG2sRhkKzwrxFECPotYT6h halucineight@nixos-desktop"
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+    nh
+  ];
 
   system.stateVersion = "26.05";
 }
