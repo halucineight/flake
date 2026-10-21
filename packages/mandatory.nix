@@ -39,9 +39,9 @@ with pkgs;
   polkit_gnome
   papirus-icon-theme
   librsvg
-  kdePackages.gwenview
   exiftool
   mpv
+  eog
   yt-dlp
   fastfetch
   quickshellFlake.packages.${pkgs.system}.default
