@@ -58,4 +58,5 @@ with pkgs;
   lua
   vscode-langservers-extracted
   hyprshutdown
+  wl-clipboard
 ]
