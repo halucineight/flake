@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   dotfiles,
   gruvshell,
@@ -8,20 +7,18 @@
 }:
 
 let
-  mkHomeUser =
-    user:
-    lib.nameValuePair user.name {
-      imports = [
-        ./common.nix
-        ./gtk.nix
-      ];
+  mkHomeUser = name: {
+    imports = [
+      ./common.nix
+      ./gtk.nix
+    ];
 
-      programs.ssh = {
-        enable = true;
-        enableDefaultConfig = false;
-        settings."*".AddKeysToAgent = "yes";
-      };
+    programs.ssh = {
+      enable = true;
+      enableDefaultConfig = false;
+      settings."*".AddKeysToAgent = "yes";
     };
+  };
 in
 {
   home-manager = {
@@ -32,6 +29,6 @@ in
       inherit dotfiles gruvshell gruvboxTmux;
     };
 
-    users = builtins.listToAttrs (map mkHomeUser config.users.list);
+    users = lib.genAttrs [ "halucineight" "playground" ] mkHomeUser;
   };
 }

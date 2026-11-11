@@ -11,6 +11,7 @@
   networking.hostName = "ph315";
 
   imports = [
+    ./users.nix
     ./hardware-configuration.nix
     ./disko.nix
     ./nvidia.nix
@@ -21,7 +22,7 @@
 
   programs.nh = {
     enable = true;
-    flake = "path:/home/${config.users.primaryUser}/flake";
+    flake = "path:/home/halucineight/flake";
   };
 
 }

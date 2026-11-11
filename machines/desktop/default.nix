@@ -9,6 +9,12 @@
 
 {
   networking.hostName = "desktop";
+  networking.firewall.allowedTCPPorts = [
+    3001
+    8080
+  ];
+
+  services.openssh.enable = true;
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
@@ -18,6 +24,7 @@
   };
 
   imports = [
+    ./users.nix
     ./hardware-configuration.nix
     ./nvidia.nix
     ./fstab.nix
@@ -47,7 +54,7 @@
   };
   programs.nh = {
     enable = true;
-    flake = "path:/home/${config.users.primaryUser}/flake";
+    flake = "path:/home/halucineight/flake";
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
