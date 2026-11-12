@@ -9,10 +9,13 @@
 
 {
   networking.hostName = "desktop";
-  networking.firewall.allowedTCPPorts = [
-    3001
-    8080
-  ];
+  networking.firewall.enable = true;
+  networking.firewall = {
+    extraInputRules = ''
+      ip saddr { 192.168.29.54 } tcp dport {8080,3001} accept
+    '';
+  };
+  networking.nftables.enable = true;
 
   services.openssh.enable = true;
 
