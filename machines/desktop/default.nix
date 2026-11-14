@@ -46,10 +46,11 @@
     nixos-firewall-tool
     losslesscut-bin
     bubblewrap
+    brave
   ];
 
   services.hardware.deepcool-digital-linux = {
-    enable = false;
+    enable = true;
     extraArgs = [
       "--mode"
       "auto"
