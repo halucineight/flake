@@ -47,6 +47,7 @@
     losslesscut-bin
     bubblewrap
     brave
+    handbrake
   ];
 
   services.hardware.deepcool-digital-linux = {
