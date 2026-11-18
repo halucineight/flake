@@ -24,7 +24,7 @@
     enable = true;
     settings = {
       PermitRootLogin = "no";
-      PasswordAuthentication = true;
+      PasswordAuthentication = false;
       PermitEmptyPasswords = false;
     };
   };
@@ -52,7 +52,7 @@
       "wheel"
       "networkmanager"
     ];
-    initialHashedPassword = "";
+    initialHashedPassword = "!";
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBWSsSSdAcrPqfVPbL1OmaTG2sRhkKzwrxFECPotYT6h halucineight@nixos-desktop"
     ];
